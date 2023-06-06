@@ -16,10 +16,10 @@ const add = async (req, res) => {
   if (req.user.role !== "admin") {
     throw new Error("You are not allowed to add items");
   }
-  const item = await Item.findOne({ name });
-  if (item) {
-    throw new Error(`Item with name ${name} already exists`);
-  }
+  // const item = await Item.findOne({ name });
+  // if (item) {
+  //   throw new Error(`Item with name ${name} already exists`);
+  // }
   const result = await Item.create({
     name,
     description,
